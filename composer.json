@@ -1,0 +1,21 @@
+{
+    "name": "addin/google-people",
+    "description": "Manipulasi kontak Google (People API)",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Addin\\GooglePeople\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "addin",
+            "email": "hello@addin.wb.id"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "google/apiclient": "^2.0"
+    }
+}
