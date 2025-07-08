@@ -5,13 +5,13 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Addin\\GooglePeople\\": "src/"
+            "Addin\\": "src/"
         }
     },
     "authors": [
         {
             "name": "addin",
-            "email": "hello@addin.wb.id"
+            "email": "hello@addin.web.id"
         }
     ],
     "minimum-stability": "stable",
