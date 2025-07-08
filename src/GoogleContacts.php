@@ -1,6 +1,6 @@
 <?php
 
-namespace GoogleContacts;
+namespace Addin\GooglePeople;
 
 use Google_Client;
 use Google_Service_PeopleService;
