@@ -100,7 +100,7 @@ class GoogleContactsManager
         return $results;
     }
 
-    public function addContact(string $name, string $phone, string $email = null): Google_Service_PeopleService_Person
+    public function addContact(string $name, string $phone, string $email = null, ?string $birthdate = null): Google_Service_PeopleService_Person
     {
         $person = new Google_Service_PeopleService_Person();
 
@@ -112,6 +112,22 @@ class GoogleContactsManager
             $emailObj = new Google_Service_PeopleService_EmailAddress();
             $emailObj->setValue($email);
             $person->setEmailAddresses([$emailObj]);
+        }
+        if ($birthdate) {
+            $parts = explode('-', $birthdate); // format: YYYY-MM-DD
+            if (count($parts) === 3) {
+                [$year, $month, $day] = array_map('intval', $parts);
+
+                $date = new Google_Service_PeopleService_Date();
+                $date->setYear($year);
+                $date->setMonth($month);
+                $date->setDay($day);
+
+                $birthday = new Google_Service_PeopleService_Birthday();
+                $birthday->setDate($date);
+
+                $person->setBirthdays([$birthday]);
+            }
         }
 
         $phoneObj = new Google_Service_PeopleService_PhoneNumber();
