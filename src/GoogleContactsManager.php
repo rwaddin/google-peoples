@@ -159,4 +159,10 @@ class GoogleContactsManager
         }
         return null;
     }
+
+    public function getService(): Google_Service_PeopleService
+    {
+        return $this->service;
+    }
+
 }

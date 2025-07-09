@@ -82,6 +82,13 @@ $contacts->updateContact($resourceName, 'Nama Baru', 'emailbaru@example.com');
 $contacts->deleteContact($resourceName);
 ```
 
+Menggunakan Inisialisasi
+pakai method `getService()`
+
+```php
+$contact->getService()->whatever()->method()->google();
+```
+
 ⚠️ Catatan
 
 - Token akan otomatis direfresh jika access token expired
