@@ -8,6 +8,8 @@ use Google_Service_PeopleService_Person;
 use Google_Service_PeopleService_Name;
 use Google_Service_PeopleService_EmailAddress;
 use Google_Service_PeopleService_PhoneNumber;
+use Google_Service_PeopleService_Birthday;
+use Google_Service_PeopleService_Date;
 
 class GoogleContactsManager
 {
@@ -100,7 +102,7 @@ class GoogleContactsManager
         return $results;
     }
 
-    public function addContact(string $name, string $phone, string $email = null, ?string $birthdate = null): Google_Service_PeopleService_Person
+    public function addContact(string $name, string $phone, ?string $email = null, ?string $birthdate = null): Google_Service_PeopleService_Person
     {
         $person = new Google_Service_PeopleService_Person();
 
